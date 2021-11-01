@@ -1,0 +1,88 @@
+<div class="container-fluid mt-lg-5 py-md-2">
+  <div class="mt-md-5">
+
+    <a (click)="backButton()" class="backBtn" href="javascript:void(0)">
+      <img alt="" src="./assets/images/toggleBackArrow.svg">
+      <span class="mx-3"> Back </span>
+    </a>
+  </div>
+  <div class="box">
+    <div class="row d-flex align-items-md-center ">
+      <div class="col-md-3">
+        <!--     picture upload-->
+        <div class="imageIcon mt-md-5">
+          <input accept="image/*" id="file" name="image" style="display: none;" type="file" (change)="onFileSelected($event)">
+          <label for="file" style="cursor: pointer;">
+<!--            <img alt="" src="./assets/images/uploadImageIcon.svg">-->
+            <img alt="" src="./assets/images/uploadImageIcon.svg">
+          </label>
+        </div>
+      </div>
+
+      <div class="col-md-4 mt-md-5">
+        <p><span class="nameText">{{salaryForm.value.firstName}} &nbsp;{{salaryForm.value.lastName}}</span></p>
+        <p><span class="jobDescriptionTxt">{{salaryForm.value.companyRole}}</span></p>
+      </div>
+    </div>
+    <div class="row">
+      <!--      form-->
+      <form [formGroup]="salaryForm" >
+        <div class="row mt-md-5">
+          <div class="col-md-5">
+            <label> First Name</label>
+            <input class="form-control" type="text" formControlName="firstName" required>
+          </div>
+
+          <div class="col-md-5">
+            <label>Last Name</label>
+            <input class="form-control" type="text" formControlName="lastName" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">
+            <label>Company Role</label>
+            <input class="form-control" type="text" formControlName="companyRole" required>
+          </div>
+          <div class="col-md-5">
+            <label>Payee Type</label>
+            <input class="form-control" formControlName="payeeType" list="payeeType" name="payeeType" required>
+            <datalist id="payeeType">
+              <option value="Full staff">
+              <option value="Part-time">
+              <option value="Corper">
+              <option value="Intern">
+              <option value="Work-study">
+              <option value="Full-time">
+            </datalist>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">
+            <label>Last Pay</label>
+            <input class="form-control" formControlName="lastPay" type="date" required>
+          </div>
+          <div class="col-md-5">
+            <label>Salary</label>
+            <input class="form-control no-spin" formControlName="salary" type="number" required>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-md-5">
+            <label>Next Pay</label>
+            <input class="form-control" formControlName="nextPay" type="date" required>
+          </div>
+        </div>
+
+        <div class="buttonRow d-flex justify-content-center mb-lg-5">
+          <button (click)="saveButton();" [disabled]="!salaryForm.valid " *ngIf="toogleTag();"  class="btn btnCustom btnCustomColorPrimary " > Save</button>
+          <button *ngIf="toogleTag();" class="btn btnCustom btnCustomColorPrimary " (click)="update()"> Update </button>
+          <button class="btn btnCustom btnCustomColorWhite"    (click)="cancel()"> Cancel</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,81 @@
+<div class="container-fluid  mt-lg-5 py-md-2">
+  <div class="row">
+    <span class="salaryManagementText"> Salary Management</span>
+  </div>
+
+  <div class="row rowCus">
+    <!--    total wages and  pay schedule board -->
+    <div class="col-md-6 d-flex parentCol">
+      <div class="smallBox d-flex flex-column">
+        <span class="smallBoxText"> Total Wages </span><br>
+        <span class="smallBoxTextBtm">{{TotalWages | currency:"NGN":"₦"}}</span>
+      </div>
+
+      <div class="smallBox d-flex flex-column">
+        <span class="smallBoxText"> Pay Schedule </span><br>
+        <span class="smallBoxTextBtm">Monthly</span>
+      </div>
+    </div>
+
+
+
+
+
+    <!--    Add employee button-->
+    <div class="col-md-6  ">
+      <button  (click)="addEmployee()" class="btn btnText btn-Payroll float-end "> Add Employee</button>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="row">
+    <div class="col-md-6  box">
+      <div class="search-cont d-flex">
+        <span class="mag-glass"><img alt="" class="mag-glass" src="../assets/images/magnifying-glass.svg"></span>
+        <input aria-label="Search" class=" cw-45  form-control" placeholder="Search" type="search">
+        <div class="mx-4">
+          <a href="javascript:void (0)"><img alt="" class="" src="./assets/images/search_Burger.svg"></a>
+
+        </div>
+      </div>
+      <div class="row tableCustom">
+        <!--      Salary management List table-->
+        <table class="table table-responsive-md mt-md-4 customTable" width="100%">
+          <thead>
+          <tr>
+            <th scope="col">S/N</th>
+            <th scope="col">Name</th>
+            <th scope="col">Department</th>
+            <th scope="col">Payee Type</th>
+            <th scope="col" class="text-center">Status</th>
+            <th scope="col">Amount</th>
+            <th scope="col"></th>
+          </tr>
+          </thead>
+          <tbody *ngIf="employees.length > 0">
+<!--          <tr>-->
+          <tr *ngFor=" let  e of employees  | paginate: {itemsPerPage:10,currentPage: cp}; let i = index;">
+            <th scope="row">{{i+1}}</th>
+            <td><a  [routerLink]="['/dashboard/payroll/salary-mgt/details', e.id]">{{e.firstName}} {{e.lastName}}</a></td>
+            <td> {{e.companyRole}}</td>
+            <td> {{e.payeeType}}</td>
+            <td>
+              <div class="status statusPaid">Paid</div>
+            </td>
+            <td>{{e.salary | currency:"NGN":"₦"}}</td>
+            <td><a href="javascript:void(0)"><img alt="" src="./assets/images/3%20dots.svg"></a></td>
+          </tr>
+          </tbody>
+        </table>
+        <div class="d-flex justify-content-end">
+          <pagination-controls (pageChange)=" cp = $event" class="mt-lg-5"></pagination-controls>
+        </div>
+        <!--         PAGINATION AND STYLING  PENDING-->
+      </div>
+    </div>
+  </div>
+
+</div>

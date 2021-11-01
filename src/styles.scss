@@ -1,0 +1,979 @@
+/* You can add global styles to this file, and also import other style files */
+
+*, *::after, *::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --topNavBarInput-Color: #e9e9e9;
+    --sideBar-mainColor: #292e50;
+    --main-bg: #f5f5f8;
+    --sideBar-hover: #0f1749;
+    --border-left: #63ccf5;
+    --boxes-orange: #da900b;
+    --boxes-blue: #0261a2;
+    --boxes-maroon: #942660;
+    --title-Color: #9B9999;
+    --text-blue: #0261a2;
+    --utility-bg: #e5e5e5;
+    --buttonColor-main: #292e50;
+    --faded-text: #c3c3c3;
+    --generalBoxShadow-color: rgba(186, 166, 195, 0.25);
+    --approved-bg: #E3F9F1;
+    --approved-color: #25B273;
+    --pending-color: #FFA800;
+    --pending-bg: #FDF7EB;
+    --disapproved-color: #C33C50;
+    --disapproved-bg: #FFF0EF;
+}
+
+// format("truetype");
+
+@font-face {
+    font-family: "Lato Thin";
+    src: url("./assets/fonts/Lato-Thin.ttf") format("truetype");
+    // font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Lato Bold";
+    src: url("./assets/fonts/Lato-Bold.ttf") format("truetype");
+    font-style: normal;
+    // font-weight: 700;
+  }
+
+  @font-face {
+    font-family: "Lato Regular";
+    src: url("./assets/fonts/Lato-Regular.ttf") format("truetype");
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Lato Light";
+    src: url("./assets/fonts/Lato-Light.ttf") format("truetype");
+    font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Lato Black";
+        src: url("./assets/fonts/Lato-Black.ttf") format("truetype");
+      font-style: normal;
+    }
+
+
+html{
+    font-size: 14px;
+    background-color: var(--main-bg);
+    // height: 100%;
+}
+
+// body {  height: 100%;  }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+// My typography
+.cw-45{
+    width: 45% !important;
+}
+
+.cw-60{
+    width: 60% !important
+}
+
+// ends here
+
+// login styling starts starts here
+.main_login{
+    width: 100vw;
+    height: 100vh;
+
+    & >*{
+        font-family: 'Lato Regular';
+        color: white;
+    }
+
+
+    & .login_holder{
+       background-image: url(./assets/images/Login.png);
+       background-position: center center;
+       background-size: cover;
+    }
+
+    & .form_container{
+        margin-top: -70px;
+
+        & input[type="checkbox"]{
+            background-color: transparent;
+            border-color: white;
+        }
+
+        & a{
+            color: #8c9aff !important;
+            cursor: pointer;
+            opacity: 0.7 !important;
+            transition: opacity 100ms ease-in;
+        }
+
+        & a:hover{
+            opacity: 1 !important;
+
+        }
+
+
+
+        & .btn-primary{
+            background-color: var(--sideBar-mainColor);
+            border-color: var(--sideBar-mainColor);
+        }
+
+    }
+}
+
+
+
+// ends here
+
+
+.main{
+    background-color: var(--main-bg);
+    & .modal-backdrop.fade.show{
+        opacity: 1;
+    }
+
+    // sidebar styles begin here
+    & .offcanvas-body{
+     background-color: var(--sideBar-mainColor);
+     color: #ffff;
+     padding-left: 0;
+     padding-right: 0;
+     padding-top: 4rem;
+    }
+
+    & #offcanvasExample{
+        transform: none;
+        visibility: visible;
+        width: 250px;
+        background-color: transparent;
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease-in-out;
+
+        & .offcanvas-header{
+          opacity: 1;
+          transition: opacity 0.4s ease-in-out;
+          margin-bottom: 0.65rem;
+
+          & .toggle_middle{
+              width: 20px;
+              height: 3px;
+              background-color: black;
+              position: relative;
+
+              &::after, &::before{
+                  content: '';
+                  position: absolute;
+                  background-color: inherit;
+                  height: inherit;
+              }
+
+              &::after{
+                width: 15px;
+                top: 6px;
+              }
+
+              &::before{
+                width: 27px;
+                bottom: 6px;
+              }
+          }
+        }
+
+
+    }
+
+    & .menu_group{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        font-family: 'Lato Regular';
+
+        & .sideBar_listItems:hover{
+            cursor: pointer;
+            background-color: var(--sideBar-hover);
+        }
+    }
+
+    & .customDropDown{
+        overflow: hidden;
+
+        & ul{
+            max-height: 0;
+            list-style: none;
+            border-left: 2px solid var(--border-left);
+            font-size: 0.9rem;
+            opacity: 0;
+            transform-origin: center;
+            transition: max-height 200ms linear, opacity 220ms ease-in;
+
+            & li{
+                opacity: .6;
+                transition: opacity 200ms ease-in;
+            }
+
+            & li:hover{
+                opacity: 1;
+            }
+        }
+    }
+
+
+    & .customDropDown_menu.show{
+        max-height: 176px;
+        opacity: 1;
+
+    }
+
+    & .caret_container{
+        transition: all 200ms linear;
+    }
+
+    & .caret_container.rotate{
+        transform-origin: center;
+        transform: rotate(90deg);
+    }
+
+    // ends here
+}
+
+// Navbar - top styles begin here
+.navbar{
+    background-color: #fff;
+    border-bottom: 1px solid transparent;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.navBar_form{
+    --customSize: 12px;
+    font-size: var(--customSize);
+    background-color: #ffff;
+
+    & .magnifying-glass{
+        position: absolute;
+        left: 29%;
+
+        & img{
+            max-height: 1em;
+            object-fit: cover;
+        }
+    }
+
+    & input{
+        height: 1.9em;
+        font-size: 0.95em;
+        padding: .3em 3.2em;
+        background-color: var(--topNavBarInput-Color);
+        border: transparent;
+    }
+}
+
+// ends here
+
+
+// content styling starts here
+.main_content{
+    width: calc(100vw - 250px);
+    background-color: var(--main-bg);
+    // max-height: 1300px;
+}
+
+
+// dashboard styles begin here
+ .first_area p{
+     font-family: 'Lato Light';
+     font-size: 1.3rem;
+
+     & span{
+         font-family: 'Lato Regular';
+         font-size: 1.5rem;
+     }
+ }
+
+ .boxes_container {
+
+     & .boxes{
+        border-radius: 5px;
+     }
+
+
+     & .boxes.blue{
+        background-color: var(--boxes-blue) !important;
+     }
+     & .boxes.orange{
+        background-color: var(--boxes-orange) !important;
+     }
+     & .boxes.maroon{
+        background-color: var(--boxes-maroon) !important;
+     }
+
+     & .text{
+        font-family: 'Lato Light';
+        font-size: 1.2rem;
+        color: white;
+     }
+
+ }
+
+.calendar_container{
+        max-height: 658px;
+       & .housing{
+        border-radius: 5px;
+        border: 1px solid var(--utility-bg);
+        background-color: white;
+
+        & > div {
+                & h5{
+                    font-family: 'Lato Bold';
+                    font-size: 1.2rem;
+                }
+
+                & span{
+                    font-family: 'Lato Light';
+                    font-size: 0.95rem;
+                    color: var(--title-Color);
+                    line-height: 1.1;
+                }
+            }
+       }
+
+    }
+
+ .events_miniList {
+        & > div:nth-child(1){
+            border-radius: 5px;
+            border: 1px solid var(--utility-bg);
+            background-color: white;
+
+        }
+
+        & .upcoming_events{
+            border-bottom: 1px solid var(--utility-bg);
+        }
+
+        & .major_half {
+            margin-bottom: 0.4rem;
+
+            & span:nth-child(1){
+            font-family: 'Lato Bold';
+            font-size: 1.2rem;
+            }
+            & :nth-child(2){
+            font-family: 'Lato Light';
+            font-size: 1rem;
+            color: var(--title-Color);
+
+            }
+        }
+
+        & .individual_events{
+            & h6{
+                font-family: 'Lato Regular';
+                color: var(--title-Color);
+            }
+
+            & div span{
+                font-family: 'Lato Regular';
+            }
+        }
+
+        & .suggestions{
+            border: 1px solid var(--utility-bg);
+            border-radius: 6px;
+            background-color: white;
+
+            & h5{
+                font-family: 'Lato Bold';
+                font-size: 1.2rem;
+            }
+
+            & span{
+                font-family: 'Lato Regular';
+                font-size: .9rem;
+                color: var(--title-Color);
+            }
+
+            & textarea{
+                height: 100px;
+                border: 1px solid var(--utility-bg);
+                border-radius: 5px;
+                color: #c4c4c4;
+                font-size: .85rem;
+            }
+
+            & button{
+                border-radius: 5px;
+                font-size: 1.1rem;
+                background-color: var(--buttonColor-main);
+                border-color: var(--buttonColor-main);
+            }
+        }
+
+ }
+
+ .announcements_parent{
+    --size: 658px;
+    border: 1px solid var(--utility-bg);
+    border-radius: 5px;
+    background-color: white;
+    max-height: var(--size);
+    position: relative;
+
+    .last{
+        opacity: .3;
+    }
+ }
+
+ .announcements{
+    & > p{
+        font-family: 'Lato Bold';
+        font-size: 1.2rem;
+    }
+
+    & .ceo_talks{
+        & h6{
+            font-family: 'Lato Bold';
+        }
+
+        & p{
+            font-family: 'Lato Regular';
+            font-size: 0.85rem;
+        }
+    }
+ }
+
+ .date {
+     font-family: 'Lato Bold';
+ }
+
+
+ .time{
+    font-family: 'Lato Regular';
+    color: var(--faded-text);
+    position: relative;
+
+    &::after{
+        position: absolute;
+        content: '';
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: var(--faded-text);
+        bottom: 4px;
+        right: -15px;
+    }
+}
+
+.reply{
+    color: #23cc7b; font-size: 0.75rem;
+}
+
+.viewAll{
+    color: var(--text-blue);
+    font-size: 0.85rem;
+    letter-spacing: 0.03ch;
+    font-family: 'Lato Regular';
+    cursor: pointer;
+    text-decoration: none;
+}
+//  ends here
+
+// full calendar css customisations begins here
+
+.fc-header-toolbar.fc-toolbar {
+    padding-right: 1rem;
+    padding-left: 1rem;
+
+    & .fc-toolbar-title{
+        font-family: 'Lato Bold';
+        font-size: 1.2rem;
+    }
+
+    & .fc-today-button.fc-button.fc-button-primary{
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    & .fc-icon.fc-icon-chevron-left, .fc-icon.fc-icon-chevron-right{
+        color: black;
+    }
+
+}
+
+.fc-scroller-harness{
+    margin-right: 0.8rem;
+    margin-left: 0.8rem;
+}
+
+.fc-col-header {
+    background-color: #f7fafd;
+
+}
+
+.fc-col-header-cell > .fc-scrollgrid-sync-inner > .fc-col-header-cell-cushion {
+    text-decoration: none;
+    color: black;
+}
+
+.fc .fc-button-group {
+    margin-top: 0.2rem;
+}
+
+.fc .fc-button-primary{
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+.fc .fc-daygrid-day-top{
+    justify-content: center;
+}
+
+
+
+
+.fc-theme-standard .fc-scrollgrid, .fc-theme-standard td, .fc-theme-standard th{
+    border: none !important;
+}
+
+.fc .fc-daygrid-body-natural .fc-daygrid-day-events{
+    margin-bottom: 0 !important;
+}
+.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events{
+    min-height: 1em !important;
+}
+
+.fc .fc-daygrid-day-number{
+    text-decoration: none !important;
+    color: black;
+    font-family: 'Lato bold';
+    font-size: .9rem;
+}
+
+.fc .fc-daygrid-day.fc-day-past a{
+        color: var(--title-Color);
+}
+
+
+.fc .fc-daygrid-day.fc-day-today{
+    background: none !important;
+
+    & .fc-daygrid-day-top{
+        border: 0.2ch solid var(--text-blue);
+        border-radius: 45%;
+
+
+        // @media (min-width: 1300px){
+
+        // }
+
+        & > a{
+            font-family: 'Lato Bold';
+            transform: scale(0.9);
+            color: var(--text-blue);
+            cursor: pointer;
+            animation: scalingUpAndDown 3s alternate infinite linear;
+
+            @keyframes scalingUpAndDown{
+                0%{
+                    transform: scale(0.9);
+                }
+                100%{
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}
+
+// ends here
+
+
+// leave request, and Salary/Payroll leave balance styles starts here
+.leave_house, .salary_house{
+    & h5{
+
+        letter-spacing: 0.05ch;
+        font-family: 'Lato Regular';
+        font-weight: 600;
+        }
+
+    & .btn-primary{
+          border-color: var(--buttonColor-main);
+          background-color: var(--buttonColor-main);
+          font-family: 'Lato Regular';
+          font-size: 0.85rem;
+    }
+
+    & .textIconAndCount{
+        background-color: white;
+        border-radius: 5px;
+        font-family: 'Lato Regular';
+        box-shadow: 0px 5px 10px var(--generalBoxShadow-color);
+        cursor: pointer;
+
+        &:hover{
+            transform: scale(1.02) translateY(-3px);
+            transition: transform 200ms ease-in;
+        }
+
+        & .count{
+            font-family: 'Lato Bold';
+            font-size: 1.25rem;
+
+        }
+
+        &.selected{
+            border: 1px solid var(--text-blue);
+
+           & .text_and_icon{
+                color: var(--text-blue);
+            }
+
+           & .count{
+                color: var(--text-blue);
+            }
+        }
+    }
+
+    & .request_tables{
+        background-color: white;
+
+        & > *{
+            font-family: 'Lato Regular';
+        }
+    }
+
+    & .folder_icon{
+
+        & p{
+            font-family: 'Lato Bold';
+            font-size: 1.1rem;
+        }
+    }
+
+    & .leave_application_form {
+
+        & h5{
+        text-transform: uppercase;
+        letter-spacing: 0.05ch;
+        font-family: 'Lato Bold';
+        }
+
+        & label{
+            font-size: 0.85rem;
+            font-family: 'Lato Regular';
+            font-weight: 600;
+        }
+
+        & input, textarea, select{
+            border: 0.176ch solid #A7A7A7;
+            border-radius: 5px;
+        }
+
+        & textarea{
+            height: 10rem;
+        }
+
+
+    }
+
+
+    & .profile_part{
+        position: relative;
+
+       &::after{
+           position: absolute;
+           content: '';
+           top: 10px;
+           right: -20px;
+           width: 0.02ch;
+           height: 90%;
+           background-color: #a2a8b0;
+       }
+    }
+
+    & .profile_name__role{
+
+        & span:nth-child(1){
+            font-family: 'Lato Regular';
+            font-size: 1.45rem;
+        }
+
+        & span:nth-child(2){
+            font-family: 'Lato Light';
+            font-size: 1.05rem;
+        }
+    }
+
+}
+
+.salary_house{
+    & .salary_details, .scaffold, .profile_details__container, .profile_part{
+        min-height: 34.5rem;
+    }
+}
+
+
+.naked_button{
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: black;
+    position: relative;
+
+    &::after{
+        content: '';
+        width: 80%;
+        height: 2px;
+        background-color: var(--sideBar-hover);
+        position: absolute;
+        bottom: 3px;
+        left: 0;
+        right: 0;
+        transform: scale(0);
+        transition: transform 100ms ease-in;
+        transform-origin: right;
+    }
+
+    &:hover{
+        cursor: pointer;
+        color: black;
+    }
+
+    &:hover::after{
+        transform: scale(1);
+    }
+
+
+}
+
+.approval_text{
+    font-family: 'Lato Regular';
+    font-weight: 600;
+    font-size: 1.3rem;
+    word-spacing: 0.2ch;
+    text-align: center;
+}
+
+.status{
+    font-size: 0.95rem;
+    font-family: 'Lato Regular';
+    border-radius: 5px;
+
+    &.disapproved{
+        background-color: var(--disapproved-bg);
+        color: var(--disapproved-color);
+    }
+
+    &.approved{
+        background-color: var(--approved-bg);
+        color: var(--approved-color);
+    }
+
+    &.pending{
+        background-color: var(--pending-bg);
+        color: var(--pending-color);
+    }
+}
+
+.actions{
+    & button{
+        box-shadow: 0px 2px 5px rgba(94, 34, 127, 0.25);
+        border-radius: 7px;
+    }
+
+    & button:nth-child(2){
+        color: var(--sideBar-hover);
+        border-color: var(--sideBar-hover);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.events_miniList {
+  & > div:nth-child(1){
+    border-radius: 5px;
+    border: 1px solid var(--utility-bg);
+    background-color: white;
+
+    & a{
+      color: var(--text-blue);
+      font-size: 0.85rem;
+      letter-spacing: 0.03ch;
+      font-family: 'Lato Regular';
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+
+  & .upcoming_events{
+    border-bottom: 1px solid var(--utility-bg);
+  }
+
+
+
+  & .major_half {
+    margin-bottom: 0.4rem;
+
+    & span:nth-child(1){
+      font-family: 'Lato Regular';
+      font-size: 1.2rem;
+    }
+    & :nth-child(2){
+      font-family: 'Lato Light';
+      font-size: 1rem;
+      color: var(--title-Color);
+
+    }
+  }
+
+  & .individual_events{
+    & h6{
+      font-family: 'Lato Regular';
+      color: var(--title-Color);
+    }
+
+    & div span{
+      font-family: 'Lato Regular';
+    }
+  }
+
+  & .suggestions{
+    border: 1px solid var(--utility-bg);
+    border-radius: 6px;
+    background-color: white;
+
+    & h5{
+      font-family: 'Lato Bold';
+      font-size: 1.2rem;
+    }
+
+    & span{
+      font-family: 'Lato Regular';
+      font-size: .9rem;
+      color: var(--title-Color);
+    }
+
+    & textarea{
+      height: 100px;
+      border: 1px solid var(--utility-bg);
+      border-radius: 5px;
+      color: #c4c4c4;
+      font-size: .85rem;
+    }
+
+    & button{
+      border-radius: 5px;
+      font-size: 1.1rem;
+      background-color: var(--buttonColor-main);
+      border-color: var(--buttonColor-main);
+    }
+  }
+
+}
+.box {
+  min-height: 64vh;
+  width: 100%;
+  background-color: #FFFFFF;
+  margin-top: 20px;
+  padding-left: 30px;
+}
+
+.boxEmp {
+  Height:400px;
+  width: 100%;
+  background-color: #FFFFFF;
+  margin-top: 20px;
+  padding-left: 30px;
+}
+
+.tableCustom{
+  padding-right: 20px;
+}
+
+
+.pointer
+{cursor: pointer;}
+
+
+
+
+.smallBoxText {
+  font-family:  "Lato Thin";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 19px;
+  text-align: justify;
+  color: #525252;
+  padding-left: 24px;
+  padding-top: 12px !important;
+}
+
+.smallBoxTextBtm {
+  font-family: "Lato Black";
+  font-size: 1.5vw;
+  font-size: 2.5vh;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 24px;
+  text-align: justify-all;
+  color: #525252;
+  padding-left: 24px;
+  color: #525252;
+
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.ngx-pagination .current {
+  padding: 0.1875rem 0.625rem;
+  background: #292e50 !important;
+  color: #fefefe;
+  cursor: default;
+}
+
+
+.smallBox {
+  height: 89px;
+  width: 251px;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  margin-right: 35px;
+  margin-top: 12px;
+
+}
+.smallBox:hover {
+  margin-left: 1px;
+  background-color: #fcfbfb !important;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.no-spin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+
+.no-spin {
+  -moz-appearance:textfield !important;
+}
+

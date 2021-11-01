@@ -1,0 +1,95 @@
+<div class="container-fluid mt-lg-5 py-md-2">
+  <div class="mt-md-4" >
+
+    <a (click)="backButton()" class="backBtn" href="javascript:void(0)">
+      <img alt="" src="./assets/images/toggleBackArrow.svg">
+      <span class="mx-3"> Back </span>
+    </a>
+  </div>
+
+  <div class="row ">
+    <span class="salaryManagementText"> Salary Advance</span>
+  </div>
+
+  <div class="row rowCus">
+    <!--    total wages and  pay schedule board -->
+    <div class="col-md-6 d-flex parentCol">
+      <div class="smallBox d-flex flex-column">
+        <span class="smallBoxText"> Salary Advance Types </span><br>
+        <span class="smallBoxTextBtm">03</span>
+      </div>
+
+      <div class="smallBox d-flex flex-column">
+        <span class="smallBoxText"> Advance Payment Types </span><br>
+        <span class="smallBoxTextBtm">03</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6  box">
+      <div class="mt-md-5">
+        <span class="text">SALARY APPLICATION/ APPROVAL FORM</span>
+      </div>
+
+      <div class="row">
+        <!--      form-->
+        <form [formGroup]="salaryForm" >
+          <div class="row mt-md-5">
+            <div class="col-md-5 ">
+              <label> First Name</label>
+              <input class="form-control" formControlName="firstName" type="text" formControlName="firstName">
+
+
+            </div>
+            <div class="col-md-5">
+              <label>Last Name</label>
+              <input class="form-control" formControlName="lastName" type="text" formControlName="lastName">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-5">
+              <label>Company Role</label>
+              <input class="form-control" formControlName="companyRole" type="text" formControlName="companyRole">
+            </div>
+            <div class="col-md-5">
+              <label>Amount</label>
+              <input class="form-control no-spin" type="number" formControlName="amount" placeholder="e.g 100,000">
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="col-md-5">
+              <label>Repayment Plan Type</label>
+              <input placeholder="Monthly, Quarterly..." class="form-control" formControlName="repaymentPlanType" list="repaymentPlanType" name="repaymentPlanType" required>
+              <datalist id="repaymentPlanType">
+                <option value="Monthly">
+                <option value="Quarterly">
+                <option value="Yearly">
+              </datalist>
+
+
+              <div class="col-md-5">
+                <label>Payment Due Date</label>
+                <input class="form-control" formControlName="paymentDueDate" type="date" required>
+              </div>
+            </div>
+
+            <div class="col-md-5">
+              <label>Reason for Salary Advance (optional) </label>
+              <textarea class="form-control rounded-0 mb-md-5" formcontrolname="reasonForSalaryAdvance"></textarea>
+            </div>
+          </div>
+          <div class="buttonRow d-flex justify-content-center  mb-lg-5">
+            <button type="button"  class="btn btnCustom btnCustomColorPrimary" (click)="save()" > Save</button>
+
+            <button class="btn btnCustom btnCustomColorWhite" > Cancel</button>
+          </div>
+        </form>
+<!--        modal creation below-->
+
+      </div>
+    </div>
+  </div>
+
+</div>

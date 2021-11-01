@@ -1,0 +1,50 @@
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
+      <!-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
+        <span class="toggle_middle"></span>
+      </button> -->
+      <span class="toggle_middle mt-3 me-3"></span>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="menu_group">
+          <li class="py-3 px-4 sideBar_listItems "> <span class="me-3"><img src="../assets/images/dashboard_icon.svg" alt=""></span> Dashboard  </li>
+          <li (click)="loansAdvance()" class="py-3 px-4 sideBar_listItems d-flex"> <span class="me-3 "><img src="../assets/images/payroll_icon.svg" alt=""></span> Loans/Advance <span class="ms-auto"></span></li>
+
+          <li (click)="toggle_dropDown($event)" class="py-2 px-4 sideBar_listItems d-flex flex-column  customDropDown">
+             <div class="d-flex pb-2">
+              <span class="me-3 "><img src="../assets/images/payroll_icon.svg" alt=""></span>
+              <span> Payroll  </span>
+             <span class="ms-auto caret_container"><img src="../assets/images/caret_right_icon.svg" alt=""> </span>
+             </div>
+
+            <ul class="customDropDown_menu ms-2 pb-0">
+              <li (click)="generalservice.goToPayrollRoutes(router, 'dashboard/payroll/salary-mgt')" class="py-1 px-1">Salary Management</li>
+              <li class="py-1 px-1">Loans</li>
+              <li class="py-1 px-1" (click)="generalservice.goToPayrollRoutes(router, 'dashboard/payroll/salary-advance')">Salary Advance</li>
+            </ul>
+          </li>
+          <li (click)="toggle_dropDown($event)" class="py-3 px-4 sideBar_listItems d-flex flex-column customDropDown">
+            <div class="d-flex pb-2">
+              <span class="me-3 "><img src="../assets/images/human_resources_icon.svg" alt=""></span>
+             <span>  Human Resources </span>
+            <span class="ms-auto caret_container"><img src="../assets/images/caret_right_icon.svg" alt=""></span>
+            </div>
+
+            <ul class="customDropDown_menu ms-2 pb-0">
+              <li class="py-1 px-1">Expenses</li>
+              <li (click)="generalservice.goToLeaveRequest(router, 'approved')" class="py-1 px-1">Leave Request</li>
+              <li class="py-1 px-1">Employee Change</li>
+              <li class="py-1 px-1">Employee Suggestions</li>
+              <li class="py-1 px-1">Compose Mail</li>
+              <li class="py-1 px-1">Gift and Incentive</li>
+              <li class="pt-1 px-1">Employee Promotion List</li>
+            </ul>
+          </li>
+          <li class="py-3 px-4 sideBar_listItems d-flex"> <span class="me-3 "><img src="../assets/images/reports_icon.svg" alt=""></span> Report <span class="ms-auto"><img src="../assets/images/caret_right_icon.svg" alt=""></span></li>
+          <li class="py-3 px-4 sideBar_listItems d-flex"> <span class="me-3 "><img src="../assets/images/pms_icon.svg" alt=""></span> PMS <span class="ms-auto"><img src="../assets/images/caret_right_icon.svg" alt=""></span></li>
+          <li class="py-3 px-4 sideBar_listItems d-flex"> <span class="me-3 "><img src="../assets/images/compliance_icon.svg" alt=""></span> Compliance <span class="ms-auto"><img src="../assets/images/caret_right_icon.svg" alt=""></span></li>
+          <li class="py-3 px-4 sideBar_listItems d-flex"> <span class="me-3 "><img src="../assets/images/control_panel_icon.svg" alt=""></span> Control Panel <span class="ms-auto"><img src="../assets/images/caret_right_icon.svg" alt=""></span></li>
+        </ul>
+    </div>
+  </div>

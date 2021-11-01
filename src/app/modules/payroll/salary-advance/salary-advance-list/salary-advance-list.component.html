@@ -1,0 +1,107 @@
+<div class="container-fluid mt-lg-5 py-md-2">
+  <div class="row">
+    <span class="salaryManagementText"> Salary Advance</span>
+  </div>
+
+  <div class="row rowCus ">
+    <!--    total wages and  pay schedule board -->
+    <div class="col-md-6 d-flex parentCol">
+      <div class="smallBox d-flex flex-column">
+        <span class="smallBoxText"> Application List </span><br>
+        <span class="smallBoxTextBtm">{{employees.length}}</span>
+      </div>
+
+      <div class="smallBox d-flex flex-column">
+        <span class="smallBoxText"> Repayment List </span><br>
+        <span class="smallBoxTextBtm">{{employees.length}}</span>
+      </div>
+    </div>
+
+    <!--    Add employee button-->
+    <div class="col-md-6  ">
+      <button class="btn btnText btn-Payroll float-end" (click)="createSalaryAdvance()"> Apply for Salary Advance</button>
+    </div>
+
+  </div>
+  <div class="row ">
+    <div class="col-md-6 box tableCustom">
+      <div class="search-cont d-flex">
+        <span class="mag-glass"><img alt="" class="mag-glass" src="../assets/images/magnifying-glass.svg"></span>
+        <input aria-label="Search" class=" cw-45  form-control" placeholder="Search" type="search">
+        <a href="javascript:void (0)"><img alt="" class="mx-4" src="./assets/images/search_Burger.svg"></a>
+      </div>
+      <div class="row">
+        <!--      Salary management List table-->
+        <table class="  table table-responsive-md mt-md-4 customTable" width="100%">
+          <thead>
+          <tr >
+            <th scope="col">S/N</th>
+            <th scope="col">Name</th>
+            <th scope="col">Department</th>
+            <th scope="col">Advance&nbsp;Amount</th>
+            <th scope="col">Date</th>
+            <th scope="col" class="text-center">Status</th>
+            <th scope="col"></th>
+          </tr>
+          </thead>
+          <tbody *ngIf="employees.length > 0">
+<!--          (click)="details()" class="pointer"-->
+          <tr  *ngFor=" let  e of employees | paginate: {itemsPerPage:10,currentPage: cp};   let i = index;" >
+            <th scope="row">{{i+1}}</th>
+            <td><a  [routerLink]="['/dashboard/payroll/salary-advance/details', e.id]">{{e.firstName}} {{e.lastName}}</a></td>
+            <td> {{e.companyRole}}</td>
+            <td>{{e.amount | currency:"NGN":"₦"}}</td>
+            <td>{{e.paymentDueDate| date:'shortDate':'GMT'}}</td>
+            <td>
+              <div class="status statusPaid">Approved</div>
+            </td>
+
+
+            <td (click)="delete(e.id)"><a href="javascript:void(0)">
+<!--              <img alt="" src="./assets/images/3%20dots.svg"></a>-->
+              <img alt="" src="./assets/images/cancel.png" width="12" height="12"></a>
+            </td>
+          </tr>
+          <tr  *ngFor=" let  e of employees | paginate: {itemsPerPage:10,currentPage: cp};   let i = index;" >
+            <th scope="row">{{i+1}}</th>
+            <td><a  [routerLink]="['/dashboard/payroll/salary-advance/details', e.id]">{{e.firstName}} {{e.lastName}}</a></td>
+            <td> {{e.companyRole}}</td>
+            <td>{{e.amount | currency:"NGN":"₦"}}</td>
+            <td>17/11/2019</td>
+            <td>
+              <div class="status statusPending">Pending</div>
+            </td>
+
+            <td (click)="delete(e.id)"><a href="javascript:void(0)">
+<!--              <img alt="" src="./assets/images/3%20dots.svg"></a>-->
+              <img alt="" src="./assets/images/cancel.png" width="12" height="12"></a>
+            </td>
+          </tr>
+          <tr  *ngFor=" let  e of employees | paginate: {itemsPerPage:10,currentPage: cp};   let i = index;" >
+            <th scope="row">{{i+1}}</th>
+            <td><a  [routerLink]="['/dashboard/payroll/salary-advance/details', e.id]">{{e.firstName}} {{e.lastName}}</a></td>
+            <td> {{e.companyRole}}</td>
+            <td>{{e.amount | currency:"NGN":"₦"}}</td>
+            <td>17/11/2019</td>
+            <td>
+              <div class="status statusRejected">Rejected</div>
+            </td>
+
+            <td (click)="delete(e.id)"><a href="javascript:void(0)">
+<!--              <img alt="" src="./assets/images/3%20dots.svg"></a>-->
+              <img alt="" src="./assets/images/cancel.png" width="12" height="12"></a>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+
+        <div class="d-flex justify-content-end">
+          <pagination-controls (pageChange)=" cp = $event" class="mt-lg-5"></pagination-controls>
+        </div>
+        <!--         PAGINATION AND STYLING  PENDING-->
+      </div>
+    </div>
+  </div>
+
+</div>

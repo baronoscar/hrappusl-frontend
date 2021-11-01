@@ -1,0 +1,70 @@
+<div class="salary_house">
+    <section class="three_boxes pt-3 mb-5">
+     <div class="container-fluid">
+                <div (click)="generalservice.goToPayrollRoutes(router, 'dashboard/salary-mgt/add')" class="addEmployeeButton w-25 ms-auto">
+                    <app-top-button  [class]="'ms-auto'" [text]="'Add Employee'"></app-top-button>
+                </div>   
+         <div class="row heading_area">
+            <h5 class="mb-3">Salary Management </h5>
+             <div class="col-md-3 ">
+                <app-top-displays
+                  [textToDisplay]="'Total Wages'"
+                  [count]="'N 107,089,502.19'"
+                 ></app-top-displays>
+             </div>
+             <div class="col-md-3 ">
+                 <app-top-displays
+                    [textToDisplay]="'Pay Schedule'"
+                    [count]="'Monthly'"
+                ></app-top-displays>
+             </div>
+         </div>
+     </div>
+
+    </section>
+
+    <section class="request_tables approved pt-5 mx-2">
+        <form action="" class="my-2 ms-3 w-50 position-relative">
+            <input type="text" class="cw-60" placeholder="Search">
+            <span class="ms-3"><img src="../../../assets/images/hamburger.svg" alt=""></span>
+            <span class="magnifying-glass"><img src="../assets/images/magnifying-glass.svg" alt=""></span>
+        </form>
+        <div class="table_container px-3">
+         <table class="table">
+             <thead>
+               <tr>
+                 <th scope="col">S/N</th>
+                 <th scope="col">Name</th>
+                 <th scope="col">Department</th>
+                 <th scope="col">Payee Type</th>
+                 <th scope="col">Status</th>
+                 <th scope="col">Amount</th>
+                 <th scope="col"></th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr (click)="generalservice.goToPayrollRoutes(router, 'dashboard/salary-mgt/details')">
+                 <th scope="row">1</th>
+                 <td>Chinemerem Obiora</td>
+                 <td>Technical</td>
+                 <td>Full Staff</td>
+                 <td> <span class="status px-3 approved py-1">Paid</span></td>
+                 <td>N 100,000</td>
+                 <td><span class="more_actions"><img src="../../../assets/images/more_actions.svg" alt=""></span></td>
+               </tr>
+
+               <tr>
+                <th scope="row">2</th>
+                <td>Opeyemi Olatogun</td>
+                <td>Functional</td> 
+                <td>Part-time</td>
+                <td> <span class="status px-3 pending py-1">Pending</span> </td>
+                <td>N 60,000 </td>
+                <td><span class="more_actions"><img src="../../../assets/images/more_actions.svg" alt=""></span></td>
+              </tr>
+               
+             </tbody>
+           </table>
+        </div>
+     </section>
+</div>

@@ -1,0 +1,31 @@
+
+
+.heading_area{
+    margin-top: -50px;
+}
+
+.addEmployeeButton{
+    margin-top: 1rem;
+}
+
+
+.request_tables{
+    --preferred-color: #e6e5e6;
+     & input{
+        border: 1px solid var(--preferred-color);
+        border-radius: 5px;
+        padding-left: 2.7rem;
+        height: 25px;
+        
+        &::placeholder{
+            font-family: 'Lato Regular';
+            color:  var(--preferred-color);
+        }
+     }
+
+     & .magnifying-glass{
+         position: absolute;
+         left: 10px;
+         
+     }
+}

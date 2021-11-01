@@ -1,0 +1,82 @@
+
+<div class="container-fluid mt-lg-5 py-md-2">
+  <div class="mt-md-5">
+    <a (click)="backButton()" class="backBtn" href="javascript:void(0)">
+      <img alt="" src="./assets/images/toggleBackArrow.svg">
+      <span class="mx-3"> Back </span>
+    </a>
+  </div>
+
+  <div class="box">
+    <div class="row justify-content-end editDiv">
+
+<!--      <div  class=" mt-md-4 mx-md-4 status  btnEdit statusPending" *ngIf="showMe==true"  > Pending</div>-->
+      <div class=" mt-md-4 mx-md-4 status  btnEdit statusApproved"*ngIf="toogleTagDis()" >Approved</div>
+      <div class=" mt-md-4 mx-md-4 status  btnEdit statusRejected" *ngIf="toogleTag()"  >Rejected</div>
+
+
+    </div>
+
+
+    <!--    <div class="border-5 border-end">-->
+    <div class="flex">
+      <div class="row mx-md-5 ">
+
+        <div class="borderLine col-md-4">
+          <div class="col-md-4 ">
+            <!--     picture upload-->
+            <div class="imageBox mt-md-5 mx-md-3 ">
+             <img alt="" class="Image" src="./assets/images/Black-american-man.svg">
+            </div>
+          </div>
+          <div class="row mt-md-4 ">
+            <p><span class="nameText1">{{salaryData.firstName}} {{salaryData.lastName}}</span></p>
+            <p><span class="nameText2">{{salaryData.companyRole}}</span></p>
+          </div>
+        </div>
+
+        <div class="col-md-8  px-md-5">
+
+          <div class="row mt-md-4">
+            <!--            first row-->
+            <div class="col-md-4 col-sm-12 mb-sm-3"><span class="txt">First Name</span>
+              <p class="nameText">{{salaryData.firstName}}</p></div>
+            <div class="col-md-4 col-sm-12 mb-sm-3"><span class="txt">Last Name</span>
+              <p class="nameText">{{salaryData.lastName}}</p></div>
+            <div class="col-md-4 col-sm-12 mb-sm-3"><span class="txt">Company Role</span>
+              <p class="nameText">{{salaryData.companyRole}}</p></div>
+
+          </div>
+          <div class="row mt-md-4">
+            <!--            second row-->
+            <div class="col-md-4 col-sm-12 mb-sm-3"><span>Advance Amount</span>
+              <p class="nameText">{{salaryData.amount| currency:'NGN':'₦'}}</p></div>
+            <div class="col-md-4 col-sm-12 mb-sm-3"><span>Total payment Due Date</span>
+              <p class="nameText">12/12/2023</p></div>
+
+          </div>
+          <div class="row mt-md-4">
+            <div class="col-md-8 col-sm-12 mb-sm-3"><span>Reason for Salary Advance (Optional)</span>
+            <div class="midBox mb-md-3">
+              <p>
+<!--                {{salaryData.reasonForSalaryAdvance}}          -->
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque hic
+                in ipsam iste iure minima non pariatur reiciendis, repudiandae vel!
+              </p>
+            </div>
+
+              <div class="buttonRow d-flex justify-content-end mb-lg-5">
+                <button  class="btn btnCustom btnCustomAccept mt-md-5 mx-md-3" (click)="approve(salaryData.id)" > Approve </button>
+
+                <button class="btn btnCustom btnCustomReject mt-md-5" (click)="rejected(salaryData.id)"> Reject</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

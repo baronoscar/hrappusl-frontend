@@ -1,0 +1,138 @@
+.backBtn {
+  text-decoration: none;
+  font-family: Lato Regular;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #303336;
+}
+
+
+
+
+.imageIcon {
+  height: 195px;
+  width: 195px;
+  border-radius: 500px;
+
+}
+
+input {
+  height: 40px;
+  width: 337px;
+  border-radius: 5px;
+  margin-bottom: 57px;
+}
+
+label {
+  font-family: "Lato Regular";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 17px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #303336;
+}
+
+@media screen and (max-width: 800px) {
+  .imageIcon {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+
+.btnCustom {
+  font-family: Nunito Sans, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 19px;
+  text-align: center;
+  margin-top: 10px;
+  height: 43px;
+  width: 134px;
+  border-radius: 7px;
+  padding: 12px 20px;
+  margin-left: 20px;
+}
+
+.btnCustomColorPrimary {
+  color: #FFFFFF;
+  background-color: #292E50;
+  border: 1px solid #292E50
+
+}
+
+.btnCustomColorWhite {
+  background-color: #FFFFFF;
+  color: #292e50;
+  border: 1px solid #292E50
+}
+
+.btn-Payroll:hover {
+  color: #fff;
+  background-color: #495188;
+  border-color: #292E50
+}
+
+.nameText {
+  height: 18px;
+  width: 165px;
+  font-family: "Lato Regular";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  text-align: left;
+  color: #303336;
+}
+
+.jobDescriptionTxt {
+  font-family: "Lato Thin";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: left;
+  color: #000000;;
+}
+
+.Image{
+  height: 152px;
+  width: 148.10256958007812px;
+  border-radius: 100px;
+  border: 2px solid;
+  border-image-source: linear-gradient(180deg, #47CAFB 10.94%, #0A7D79 39.06%, #FFA35D 72.92%, #BA93F9 100%);
+
+}
+
+.imageBox{
+  margin-top: 96px!important;
+}
+
+.borderLine{
+min-height: 80vh;
+  border-right: 0.9px solid #A2A8B0B2;
+}
+
+
+.btnEdit {
+  font-family: "Lato Light";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 19px;
+  height: 32px;
+  width: 80px;
+  border-radius: 7px;
+  text-align: center;
+
+
+}

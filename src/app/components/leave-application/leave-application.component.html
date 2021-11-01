@@ -1,0 +1,65 @@
+<div class="leave_house">
+    <app-custom-back-button></app-custom-back-button>
+    <section class="request_tables pt-2 mx-2">
+        <div class="leave_application_form p-3">
+            <h5 class="ps-3 mb-5">Leave application/approval form</h5>
+            
+            <form  class="ps-3 w-75" >
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-10 mb-4">
+                               <label for="inputfirstName" class="form-label mb-1">First Name</label>
+                              <input type="text" id="inputfirstName" class="form-control"  aria-label="First name">
+                            </div>
+                            <div class="col-10 mb-4">
+                                <label for="companyRole" class="form-label mb-1">Company Role</label>
+                              <input type="text" class="form-control" id="companyRole" aria-label="First name">
+                            </div>
+                            <div class="col-10 mb-4">
+                                <label for="leaveType" class="form-label mb-1">Leave Type</label>
+                                <select id="leaveType" class="form-select">
+                                    <option selected>Select type of leave...</option>
+                                    <option>...</option>
+                                  </select>
+                            </div>
+                            <div class="col-10 mb-4">
+                                <label for="starts" class="form-label mb-1">Leave Starts</label>
+                                <input class="form-control" id="reason"  id="starts">
+                            </div>
+        
+                            <div class="col-10 mb-4">
+                                <label for="ends" class="form-label mb-1">Leave Ends</label>
+                                <input class="form-control" id="reason"  id="reason">
+                            </div>
+            
+                          </div>  
+                    
+                    </div>
+                    <div class="col-6">
+                        <div class="row"> 
+                            <div class="col-10 mb-4">
+                                <label for="inputLastName" class="form-label mb-1">Last Name</label>
+                              <input type="text" id="inputLastName" class="form-control" aria-label="Last name">
+                            </div>
+                            <div class="col-10 mb-4">
+                                <label for="lineManager" class="form-label mb-1">Line Manager</label>
+                              <input type="text" id="lineManager" class="form-control" aria-label="Line Manager">
+                            </div>
+
+                            <div class="col-10">
+                                <label for="reason" class="form-label mb-1">Reason for Leave(optional)</label>
+                                <textarea class="form-control" id="reason"  placeholder="" id="reason"></textarea>
+                            </div>
+                          </div>  
+                    </div>
+                </div>
+            </form>    
+            <div class="w-75">
+                <app-top-button (eventEmitted)="submitLeaveForm($event)"  [class]="'px-5 mx-auto'" [text]="'Apply for Leave'"></app-top-button>
+            </div> 
+        </div>
+      </section>
+
+   
+</div>

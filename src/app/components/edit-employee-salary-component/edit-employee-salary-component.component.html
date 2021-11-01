@@ -1,0 +1,96 @@
+<div class="salary_house">
+    <div class="mt-4 mb-2">
+        <app-custom-back-button></app-custom-back-button>
+    </div>
+    <section class="request_tables salary_details pt-2 mx-2">
+   
+       
+       <div class="profile_details w-100 h-100 px-3 ms-3">
+           <div class="container-fluid h-100">
+               <div class="row  h-100">
+                   <div *ngIf="edit; else addPicture" class="col-md-12 h-100 mt-4  d-flex justify-content-start align-items-center">
+                       <div class="mb-3"><img src="../../../assets/images/African-man-large.png" alt=""></div>
+
+                       <div class="profile_name__role d-flex flex-column">
+                           <span class="mb-2 ms-5">Chinemerem Obiora</span>
+                           <span class="ms-5">Backend programming engineer</span>
+                       </div>
+                   </div>
+
+                  <ng-template #addPicture>
+                    <div  class="col-md-12 h-100 mt-4 d-flex justify-content-start align-items-center">
+                        <div class="add_picture">
+                            <div class="content w-100 h-100 d-flex flex-column justify-content-center align-items-center">
+                                <span class="d-block mb-2"> 
+                                    <img src="../../../assets/images/upload_icon.svg" alt="">
+                                </span>
+                                <span class="d-block w-75">
+                                    Upload picture here.
+                                </span>
+                            </div>
+                        </div>
+                       </div>
+                  </ng-template>
+
+                   <div class="col-md-12 my-4">
+                    <form  class="ps-3 w-75" >
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-10 mb-4">
+                                       <label for="inputfirstName" class="form-label mb-1">First Name</label>
+                                      <input type="text" [placeholder]="edit ? 'Chinemerem': ''" id="inputfirstName" class="form-control"  aria-label="First name">
+                                    </div>
+                                    <div class="col-10 mb-4">
+                                        <label for="companyRole" class="form-label mb-1">Company Role</label>
+                                      <input type="text" [placeholder]="edit ? 'Technical': ''" class="form-control" id="companyRole" aria-label="First name">
+                                    </div>
+
+                                    <div class="col-10 mb-4">
+                                        <label for="lastPay" class="form-label mb-1">Last Pay</label>
+                                      <input type="text" [placeholder]="edit ? '01/09/2021': ''" class="form-control" id="lastPay" aria-label="Last Pay">
+                                    </div>
+                                   
+                                    <div class="col-10 mb-4">
+                                        <label for="nextPay" class="form-label mb-1">Next Pay</label>
+                                        <input [placeholder]="edit ? '01/10/2021': ''" class="form-control" id="nextPay"  >
+                                    </div>
+                    
+                                  </div>  
+                            
+                            </div>
+                            <div class="col-6">
+                                <div class="row"> 
+                                    <div class="col-10 mb-4">
+                                        <label for="inputLastName" class="form-label mb-1">Last Name</label>
+                                      <input type="text" [placeholder]="edit ? 'obiora': ''" id="inputLastName" class="form-control" aria-label="Last name">
+                                    </div>
+           
+                                    <div class="col-10 mb-4">
+                                        <label for="PayeeType" class="form-label mb-1">Payee Type</label>
+                                      <input type="text" [placeholder]="edit ? 'full staff': ''" id="PayeeType" class="form-control" aria-label="Payee Type">
+                                    </div>
+
+                                    <div class="col-10 mb-4">
+                                        <label for="salary" class="form-label mb-1">Salary</label>
+                                      <input type="text" [placeholder]="edit ? 'N 100,000': ''" id="salary" class="form-control" aria-label="Salary">
+                                    </div>
+                                  </div>  
+                            </div>
+                        </div>
+
+
+                        <div  class="w-100 d-flex justify-content-center my-5 actions">
+                            <button class="btn btn-primary px-5 me-3">Save</button>
+                            <button *ngIf="edit" class="btn btn-outline-primary px-5">Cancel</button>
+                        </div>
+                    </form>   
+                   </div>
+                  
+               </div>
+           </div>
+        </div>
+      </section>
+
+   
+</div>

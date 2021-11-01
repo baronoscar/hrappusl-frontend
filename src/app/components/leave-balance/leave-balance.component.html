@@ -1,0 +1,54 @@
+<div class="leave_house">
+    <section class="three_boxes pt-5 mb-4">
+     <div class="container-fluid">
+            <h5 class="mb-3">Leave Balance</h5>
+       
+         <div class="row ">
+             <div  class="col-md-3">
+                <app-top-displays
+                  [textToDisplay]="'Annual Leave'"
+                  [count]="'19'"
+                 ></app-top-displays>
+             </div>
+             <div  class="col-md-3">
+                 <app-top-displays
+                    [textToDisplay]="'Compassionate Leave'"
+                    [count]="'13'"
+                ></app-top-displays>
+             </div>
+             <div  class="col-md-3">
+               
+                 <app-top-displays
+                 [textToDisplay]="'Examination Leave'"
+                 [count]="'07'"
+                 >
+                </app-top-displays>
+             </div>
+
+             <div  class="col-md-3">
+               
+                <app-top-displays
+                [textToDisplay]="'Paternity Leave'"
+                [count]="'0'"
+                >
+               </app-top-displays>
+            </div>
+         </div>
+     </div>
+
+    </section>
+
+    <section class="request_tables pt-2 mx-2">
+       <div class=" no_leave">
+           <div class="folder_icon py-5 d-flex flex-column justify-content-center align-items-center">
+               <p>You do not have any Pending or active leave application.</p>
+               <div class="my-2">
+                <img src="../../../assets/images/folder_icon.svg" alt="">
+               </div>
+               <app-top-button (eventEmitted)="actOnEmittedValues($event)" [class]="'mx-auto'" [text]="'Apply for Leave'"></app-top-button>
+           </div>       
+       </div>
+     </section>
+
+    
+</div>

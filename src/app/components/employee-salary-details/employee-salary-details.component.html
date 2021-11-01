@@ -1,0 +1,66 @@
+<div class="salary_house">
+    <div class="mt-4 mb-2">
+        <app-custom-back-button></app-custom-back-button>
+    </div>
+    <section class="request_tables salary_details pt-2 mx-2">
+       <!-- <img src="" alt=""> -->
+       <div (click)="generalservice.goToPayrollRoutes(router, 'dashboard/salary-mgt/edit')"  class="pe-3 w-100">
+        <app-top-button  [iconSource]="'../../../assets/images/edit_modified.svg'" [class]="'ms-auto naked_button'" [text]="'Edit'"></app-top-button>
+       </div>   
+       
+       <div class="profile_details w-100 h-100 px-3">
+           <div class="container-fluid scaffold h-100">
+               <div class="row profile_details__container h-100">
+                   <div class="col-md-4  h-100 profile_part d-flex flex-column justify-content-start align-items-center">
+                       <div class="mb-3"><img src="../../../assets/images/African-man-large.png" alt=""></div>
+
+                       <div class="profile_name__role d-flex flex-column">
+                           <span class="mb-2 ms-5">Chinemerem Obiora</span>
+
+                           <span class="ms-5">Backend programming engineer</span>
+                       </div>
+                   </div>
+                   <div class="col-md-8 profile_full_details mt-3">
+                       <div class="row ps-5 mb-5">
+                           <div class="col-md-4 flex-column d-flex">
+                            <span class="first_layer mb-3">First Name</span>
+                            <span class="second_layer">Chinemerem</span>
+                           </div>
+                           <div class="col-md-4 flex-column d-flex">
+                            <span class="first_layer mb-3">Last Name</span>
+                            <span class="second_layer">Obiora</span>
+                           </div>
+                           <div class="col-md-4 flex-column d-flex">
+                            <span class="first_layer mb-3">Company Role</span>
+                            <span class="second_layer">Techinical</span>
+                           </div>
+                       </div>
+
+                       <div class="row ps-5 mb-5">
+                        <div class="col-md-4 flex-column d-flex">
+                            <span class="first_layer mb-3">Payee Type</span>
+                            <span class="second_layer">Full Staff</span>
+                           </div>
+                           <div class="col-md-4 flex-column d-flex">
+                            <span class="first_layer mb-3">Salary</span>
+                            <span class="second_layer">N100,000</span>
+                           </div>
+                           <div class="col-md-4 flex-column d-flex">
+                            <span class="first_layer mb-3">Last Payment</span>
+                            <span class="second_layer">30/08/2021</span>
+                           </div>
+                       </div>
+                       <div class="row ps-5">
+                        <div class="col-md-4 flex-column d-flex">
+                            <span class="first_layer mb-3">Next Payment</span>
+                            <span class="second_layer">30/09/2021</span>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </div>
+      </section>
+
+   
+</div>

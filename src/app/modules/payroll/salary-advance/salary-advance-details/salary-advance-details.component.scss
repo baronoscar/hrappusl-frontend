@@ -1,0 +1,240 @@
+.backBtn {
+  text-decoration: none;
+  font-family: Lato Regular;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #303336;
+}
+
+
+.box {
+  width: 100%;
+  background-color: #FFFFFF;
+  margin-top: 20px;
+  padding-left: 30px;
+
+}
+
+.imageIcon {
+  height: 195px;
+  width: 195px;
+  border-radius: 500px;
+
+}
+
+input {
+  height: 40px;
+  width: 337px;
+  border-radius: 5px;
+  margin-bottom: 57px;
+}
+
+label {
+  font-family: "Lato Regular";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 17px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #303336;
+}
+
+@media screen and (max-width: 800px) {
+  .imageIcon {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+
+.btnCustom {
+  font-family: Nunito Sans, sans-serif;
+  height: 43px;
+  width: 95px;
+  left: 927px;
+  top: 676px;
+  border-radius: 7px;
+  padding: 12px 20px;
+}
+
+.btnCustomAccept {
+  color: #25B273;
+  border: 1px solid #25B273;
+}
+
+.btnCustomReject {
+  color: #DA0000;
+  background: #F6F6F6;
+  border: 1px solid #DA0000;
+}
+
+.btn-Payroll:hover {
+  color: #fff;
+  background-color: #495188;
+  border-color: #292E50
+}
+
+.nameText {
+  height: 18px;
+  width: 165px;
+  text-align: left;
+  font-family: "Lato Regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  margin-top: 7.94px;
+
+}
+
+.nameText1 {
+  font-family: "Lato Regular";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  text-align: left;
+
+}
+
+.jobDescriptionTxt {
+  font-family: "Lato Thin";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: left;
+  color: #000000;;
+}
+
+.Image {
+  height: 152px;
+  width: 148.10256958007812px;
+  border-radius: 100px;
+  border: 2px solid;
+  border-image-source: linear-gradient(180deg, #47CAFB 10.94%, #0A7D79 39.06%, #FFA35D 72.92%, #BA93F9 100%);
+
+}
+
+//.imageBox{
+//  margin-top: 96px!important;
+//}
+
+.borderLine {
+  min-height: 80vh;
+  border-right: 0.9px solid #A2A8B0B2;
+}
+
+
+.btnEdit {
+  font-family: "Lato Light";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 19px;
+  height: 32px;
+  width: 80px;
+  border-radius: 7px;
+  text-align: center;
+  //margin-top: 100px;
+
+
+}
+
+.txt {
+  font-family: "Lato Light";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 14px;
+  letter-spacing: 0px;
+  text-align: left;
+
+
+}
+
+.midBox {
+  height: 127px;
+  width: 380px;
+  border-radius: 5px;
+  background: #eeeeee;
+  padding: 15px 11px;
+
+}
+
+span {
+  font-family: "Lato Light";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 14px;
+  text-align: left;
+
+}
+
+p {
+  font-family: "Lato Regular";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: left;
+  color: #000000;
+
+}
+
+.statusPending {
+  background: #FDF7EB;
+  color: #FFA800;
+  width: 81px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+
+}
+
+.statusApproved {
+  background: #E3F9F1;
+  color: #25B273;
+  width: 81px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+
+}
+
+.statusRejected {
+  background: #FFF0EF;
+  color: #C33C50;
+  width: 84px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+
+}
+
+
+
+.status {
+  height: 29px;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 3px;
+  margin-left: auto;
+  margin-right: auto;
+}

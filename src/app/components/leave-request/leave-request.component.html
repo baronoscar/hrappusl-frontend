@@ -1,0 +1,39 @@
+<div class="leave_house">
+    <section class="three_boxes pt-3 mb-5">
+     <div class="container-fluid">
+            <app-top-button  (eventEmitted)="routeToSpecificPage($event)" [class]="'ms-auto'" [text]="'Request Leave'"></app-top-button>
+       
+         <div class="row">
+             <div (click)="generalservice.goToLeaveRequest(router,'approved')" class="col-md-3 ">
+                <app-top-displays
+                  [textToDisplay]="'Approved Requests'"
+                  [classes]="'approved'"
+                  [imageRoute]="'../../../assets/images/approved_icon.svg'"
+                  [count]="'19'"
+                 ></app-top-displays>
+             </div>
+             <div (click)="generalservice.goToLeaveRequest(router,'pending')" class="col-md-3">
+                 <app-top-displays
+                    [textToDisplay]="'Pending Requests'"
+                    [classes]="'pending'"
+                    [imageRoute]="'../../../assets/images/small_pending_icon.svg'"
+                    [count]="'13'"
+                ></app-top-displays>
+             </div>
+             <div (click)="generalservice.goToLeaveRequest(router,'disapproved')" class="col-md-3">
+               
+                 <app-top-displays
+                 [textToDisplay]="'Disapproved Requests'"
+                 [classes]="'disapproved'"
+                 [imageRoute]="'../../../assets/images/stop_icon.svg'"
+                 [count]="'07'"
+                 >
+                </app-top-displays>
+             </div>
+         </div>
+     </div>
+
+    </section>
+
+    <router-outlet (activate)="handleCurrentActivatedElement($event)"></router-outlet>
+</div>

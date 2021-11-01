@@ -1,0 +1,177 @@
+.salaryManagementText {
+  text-align: left;
+  margin-top: 50px !important;
+  font-family: "Lato Bold";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 29px;
+  letter-spacing: 0em;
+
+}
+
+.smallBox {
+  height: 89px;
+  width: 251px;
+  left: 292px;
+  top: 169px;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  margin-right: 35px;
+  margin-top: 12px;
+}
+
+@media screen and (max-width: 1200px) {
+  .smallBox {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .smallBox {
+    width: 100%;
+  }
+  .parentCol {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .smallBox {
+    width: 100%;
+  }
+  .parentCol {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.btnText {
+  font-family: Nunito Sans, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 19px;
+  text-align: center;
+  color: #FFFFFF;
+  height: 19px;
+  width: 94px;
+  left: 20px;
+  top: 12px;
+
+}
+
+.btn-Payroll {
+  color: #fff;
+  background-color: #292E50;
+  border-color: #292E50;
+  margin-top: 10px;
+  height: 40px;
+  width: 266px;
+  left: 1134px;
+  top: 166px;
+  border-radius: 7px;
+  padding:  12px 51px;
+
+}
+
+.btn-Payroll:hover {
+  color: #fff;
+  background-color: #495188;
+  border-color: #292E50
+}
+
+
+
+.smallBoxText {
+  font-family:  "Lato Thin";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 19px;
+  text-align: justify;
+  color: #525252;
+  padding-left: 24px;
+  padding-top: 12px !important;
+}
+
+.smallBoxTextBtm {
+  font-family: "Lato Black";
+  font-size: 1.5vw;
+  font-size: 2.5vh;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 24px;
+  text-align: justify-all;
+  color: #525252;
+  padding-left: 24px;
+  color: #525252;
+
+}
+
+.cw-45{
+  width: 29% !important;
+  height: 1.9em;
+  font-size: 0.95em;
+  padding: .3em 3.2em;
+  background-color: #FFFFFF;
+  border: 1px solid #E6E5E6;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.mag-glass {
+  position: absolute;
+  left: 2%;
+  max-height: 1em;
+  object-fit: cover;
+  padding-top: 4px;
+}
+.search-cont{
+  margin-top: 30px;
+  position: relative;
+}
+
+.statusRejected{
+  background: #FFF0EF;
+  color: #C33C50;
+  width: 84px;
+
+}
+
+.statusPaid{
+  background: #E3F9F1;
+  color: #25B273;
+  width: 91px;
+}
+
+.statusPending{
+  background: #FDF7EB;
+  color: #FFA800;
+  width: 81px;
+}
+
+.status{
+  height: 29px;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 3px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.rowCus{
+  margin-left: -20px;
+}
+
+a{
+  text-decoration: none;
+  color: #343535;
+
+}
+
+.ngx-pagination .current {
+  padding: 0.1875rem 0.625rem;
+  background: #292e50;
+  color: #fefefe;
+  cursor: default;
+}

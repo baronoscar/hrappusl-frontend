@@ -1,0 +1,5 @@
+<div class="w-100 me-3 d-flex pt-5 pb-1">
+ <button (click)="emitAnEvent()" class="btn btn-primary px-3 py-2" [ngClass]="class">
+    <img *ngIf="iconSource.length > 2"   [src]="iconSource" class="pe-1" alt=""> {{ text }} 
+</button>
+</div>
